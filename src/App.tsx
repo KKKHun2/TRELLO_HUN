@@ -11,7 +11,6 @@ function App() {
     const { destination, draggableId, source } = info;
     if (!destination) return;
     if (destination?.droppableId === source.droppableId) {
-      // same board movement.
       setToDos((allBoards) => {
         const boardCopy = [...allBoards[source.droppableId]];
         boardCopy.splice(source.index, 1);
@@ -23,7 +22,6 @@ function App() {
       });
     }
     if (destination.droppableId !== source.droppableId) {
-      // cross board movement
       setToDos((allBoards) => {
         const sourceBoard = [...allBoards[source.droppableId]];
         const destinationBoard = [...allBoards[destination.droppableId]];
